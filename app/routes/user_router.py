@@ -11,13 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post("", description="""
-**Route to create a new user**
-
-- **username:** each user must have a username
-- **email**: each user must have an email
-- **password:** each user must have a password
-""")
+@router.post("")
 def create_user(username: str, email: str, password: str,
                 db: Session = Depends(get_db)):
     password = create_password_hash(password)
