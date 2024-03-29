@@ -21,6 +21,7 @@ def create_expense(categoria: str, valor: float, metodo: str,
                    mes: int = datetime.now().month,
                    ano: int = datetime.now().year,
                    descricao: str = None):
-    new_expense = ExpenseDb(categoria=categoria, valor=valor, metodo=metodo, mes=mes, ano=ano, descricao=descricao)
+    new_expense = ExpenseDb(categoria=categoria, valor=valor, metodo=metodo, mes=mes, ano=ano, descricao=descricao,
+                            user_id=current_user.id)
     created_user = create_revenue_db(new_expense, db)
     return created_user

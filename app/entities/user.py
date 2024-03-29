@@ -32,19 +32,16 @@ class UserBase(BaseModel):
     id: int
     username: str
     email: str
-    rule: str
 
 
 class UserCreate(BaseModel):
     username: str
     email: str
     password: str
-    rule: str
 
 
 class UserLogin(BaseModel):
     id: int
     username: str
     email: str
-    rule: str
     password: str

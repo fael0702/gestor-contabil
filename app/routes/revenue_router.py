@@ -21,6 +21,7 @@ def create_revenue(categoria: str, valor: float, origem: str,
                    mes: int = datetime.now().month,
                    ano: int = datetime.now().year,
                    descricao: str = None):
-    new_revenue = RevenueDb(categoria=categoria, valor=valor, origem=origem, mes=mes, ano=ano, descricao=descricao)
+    new_revenue = RevenueDb(categoria=categoria, valor=valor, origem=origem, mes=mes, ano=ano, descricao=descricao,
+                            user_id=current_user.id)
     created_user = create_revenue_db(new_revenue, db)
     return created_user

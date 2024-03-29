@@ -15,6 +15,6 @@ router = APIRouter(
 def create_user(username: str, email: str, password: str,
                 db: Session = Depends(get_db)):
     password = create_password_hash(password)
-    new_user = UserDb(username=username, email=email, password=password, rule='user')
+    new_user = UserDb(username=username, email=email, password=password)
     created_user = create_user_db(new_user, db)
     return created_user
