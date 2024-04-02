@@ -18,7 +18,7 @@ class ExpenseDb(Base):
         DateTime(timezone=True), server_default=func.now(), server_onupdate=func.now()
     )
     categoria: Mapped[str] = mapped_column(nullable=False)
-    valor: Mapped[int] = mapped_column(nullable=False)
+    valor: Mapped[float] = mapped_column(nullable=False)
     metodo: Mapped[str] = mapped_column(nullable=False)
     descricao: Mapped[str] = mapped_column(nullable=True)
     mes: Mapped[int] = mapped_column(nullable=False)

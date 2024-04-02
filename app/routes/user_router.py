@@ -38,10 +38,9 @@ def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: Sessio
             "id": user.id,
             "username": user.username,
             "email": user.email,
-            "rule": user.rule
         }
 
         access_token = create_jwt_token(data=token_data)
-        return access_token
+        return {"access_token": access_token, "token_type": "bearer"}
     else:
         raise HTTPException(status_code=401, detail="Invalid credentials")

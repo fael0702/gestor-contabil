@@ -21,4 +21,4 @@ def get_user_by_name(username: str, db: Session) -> Optional[UserLogin]:
     if user is None:
         return None
 
-    return UserLogin(id=user.id, username=user.username, email=user.email, rule=user.rule.value, password=user.password)
+    return UserLogin(id=user.id, username=user.username, email=user.email, password=user.password)
